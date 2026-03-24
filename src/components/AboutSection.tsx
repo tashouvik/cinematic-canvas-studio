@@ -115,7 +115,7 @@ const AboutSection = () => {
             <div className="glass-card-enhanced p-8 h-full neon-card-secondary group">
               <div className="flex items-start gap-5">
                 <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition-all group-hover:shadow-[0_0_30px_hsl(var(--secondary)/0.2)]">
-                  <qualities.3.icon size={28} className="text-secondary" />
+                  {(() => { const Icon = qualities[3].icon; return <Icon size={28} className="text-secondary" />; })()}
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-bold text-foreground mb-3">{qualities[3].title}</h3>
