@@ -4,9 +4,6 @@
 
 /* ============================================================
    CINEMATIC VIDEO EDITOR PORTFOLIO — DESIGN SYSTEM
-   ============================================================
-   All colors, gradients, fonts, shadows, and animations 
-   are defined here for a dark, futuristic, ultra-premium feel.
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -14,31 +11,31 @@
 @layer base {
   :root {
     /* ── Core Backgrounds ── */
-    --background: 0 0% 3.1%;          /* #080808 */
-    --foreground: 240 5% 96.5%;       /* #F5F5F7 */
+    --background: 0 0% 3.1%;
+    --foreground: 240 5% 96.5%;
 
     /* ── Card / Surface ── */
-    --card: 0 0% 9.4%;                /* #181818 */
+    --card: 0 0% 9.4%;
     --card-foreground: 240 5% 96.5%;
 
     /* ── Popover ── */
-    --popover: 0 0% 6.7%;             /* #111111 */
+    --popover: 0 0% 6.7%;
     --popover-foreground: 240 5% 96.5%;
 
     /* ── Primary (Orange CTA) ── */
-    --primary: 26 100% 50%;           /* #FF7000 */
+    --primary: 26 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     /* ── Secondary (Teal Accent) ── */
-    --secondary: 180 100% 25.1%;      /* #007F81 */
+    --secondary: 180 100% 25.1%;
     --secondary-foreground: 0 0% 100%;
 
     /* ── Muted / Subtle ── */
-    --muted: 0 0% 12.5%;              /* #202020 */
-    --muted-foreground: 0 0% 46.7%;   /* #777575 */
+    --muted: 0 0% 12.5%;
+    --muted-foreground: 0 0% 46.7%;
 
     /* ── Accent ── */
-    --accent: 0 0% 17.3%;             /* #2C2C2C */
+    --accent: 0 0% 17.3%;
     --accent-foreground: 240 5% 96.5%;
 
     /* ── Destructive ── */
@@ -46,20 +43,20 @@
     --destructive-foreground: 0 0% 100%;
 
     /* ── Borders & Inputs ── */
-    --border: 0 0% 22.7%;             /* #3A3A3A */
+    --border: 0 0% 22.7%;
     --input: 0 0% 17.3%;
     --ring: 26 100% 50%;
 
     --radius: 0.75rem;
 
     /* ── Extended Palette Tokens ── */
-    --surface-dark: 0 0% 6.7%;        /* #111111 */
-    --surface-mid: 0 0% 12.5%;        /* #202020 */
-    --surface-light: 0 0% 17.3%;      /* #2C2C2C */
-    --surface-elevated: 0 0% 22.7%;   /* #3A3A3A */
-    --text-dim: 0 0% 33.3%;           /* #555555 */
-    --text-muted: 0 0% 46.7%;         /* #777575 */
-    --text-subtle: 0 1% 65.1%;        /* #A8A6A6 */
+    --surface-dark: 0 0% 6.7%;
+    --surface-mid: 0 0% 12.5%;
+    --surface-light: 0 0% 17.3%;
+    --surface-elevated: 0 0% 22.7%;
+    --text-dim: 0 0% 33.3%;
+    --text-muted: 0 0% 46.7%;
+    --text-subtle: 0 1% 65.1%;
 
     /* ── Gradients ── */
     --gradient-primary: linear-gradient(135deg, hsl(26 100% 50%), hsl(26 100% 40%));
@@ -117,6 +114,45 @@
                 0 0 20px hsl(var(--primary) / 0.1);
   }
 
+  /* Enhanced glass card with frosted effect */
+  .glass-card-enhanced {
+    @apply rounded-xl border border-border/50;
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  }
+
+  /* Original glass card */
+  .glass-card {
+    @apply rounded-xl border border-border;
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Neon border glow on hover — primary (orange) */
+  .neon-card-primary {
+    @apply transition-all duration-500;
+  }
+  .neon-card-primary:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow:
+      0 0 15px hsl(var(--primary) / 0.08),
+      inset 0 0 15px hsl(var(--primary) / 0.03),
+      0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+
+  /* Neon border glow on hover — secondary (teal) */
+  .neon-card-secondary {
+    @apply transition-all duration-500;
+  }
+  .neon-card-secondary:hover {
+    border-color: hsl(var(--secondary) / 0.4);
+    box-shadow:
+      0 0 15px hsl(var(--secondary) / 0.08),
+      inset 0 0 15px hsl(var(--secondary) / 0.03),
+      0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+
   /* Gradient text */
   .gradient-text-primary {
     @apply bg-clip-text text-transparent;
@@ -134,13 +170,6 @@
   /* Cinematic section spacing */
   .section-padding {
     @apply py-20 md:py-28 lg:py-32 px-4 md:px-8;
-  }
-
-  /* Glass morphism card */
-  .glass-card {
-    @apply rounded-xl border border-border;
-    background: hsl(var(--card) / 0.8);
-    backdrop-filter: blur(12px);
   }
 }
 
