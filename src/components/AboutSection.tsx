@@ -103,7 +103,7 @@ const AboutSection = () => {
           <AnimatedSection className="md:col-span-5" delay={0.2}>
             <div className="glass-card-enhanced p-8 h-full neon-card-primary group">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-all group-hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)]">
-                <qualities.2.icon size={24} className="text-primary" />
+                {(() => { const Icon = qualities[2].icon; return <Icon size={24} className="text-primary" />; })()}
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground mb-2">{qualities[2].title}</h3>
               <p className="text-sm text-text-subtle leading-relaxed">{qualities[2].desc}</p>
