@@ -1,10 +1,11 @@
 /**
  * ============================================================
- * CONTACT SECTION — Email, WhatsApp, and form
+ * CONTACT SECTION — Split layout with neon glass cards
  * ============================================================
  */
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import SectionHeading from "./SectionHeading";
 import { Mail, MessageCircle, Send } from "lucide-react";
@@ -14,12 +15,15 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    /* Replace with your form handler (e.g., EmailJS, Formspree) */
     alert("Message sent! (Connect a form service to make this work)");
   };
 
   return (
-    <section id="contact" className="section-padding relative">
+    <section id="contact" className="section-padding relative overflow-hidden">
+      {/* Background orbs */}
+      <div className="absolute top-1/4 -left-40 w-[400px] h-[400px] rounded-full blur-[150px] opacity-[0.05] bg-primary pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-[300px] h-[300px] rounded-full blur-[120px] opacity-[0.05] bg-secondary pointer-events-none" />
+
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
           <SectionHeading
@@ -33,46 +37,48 @@ const ContactSection = () => {
           {/* Contact cards */}
           <AnimatedSection>
             <div className="space-y-4">
-              <a
+              <motion.a
                 href="mailto:hello@editcraft.com"
-                className="glass-card p-5 flex items-center gap-4 glow-border hover:border-primary/30 transition-all duration-300 group"
+                whileHover={{ y: -4, scale: 1.01 }}
+                className="glass-card-enhanced p-5 flex items-center gap-4 neon-card-primary group block"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all group-hover:shadow-[0_0_25px_hsl(var(--primary)/0.2)]">
                   <Mail size={20} className="text-primary" />
                 </div>
                 <div>
                   <div className="font-display text-sm font-semibold text-foreground">Email</div>
                   <div className="text-xs text-text-muted-custom">hello@editcraft.com</div>
                 </div>
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
                 href="https://wa.me/1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card p-5 flex items-center gap-4 glow-border hover:border-secondary/30 transition-all duration-300 group"
+                whileHover={{ y: -4, scale: 1.01 }}
+                className="glass-card-enhanced p-5 flex items-center gap-4 neon-card-secondary group block"
               >
-                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all group-hover:shadow-[0_0_25px_hsl(var(--secondary)/0.2)]">
                   <MessageCircle size={20} className="text-secondary" />
                 </div>
                 <div>
                   <div className="font-display text-sm font-semibold text-foreground">WhatsApp</div>
                   <div className="text-xs text-text-muted-custom">+1 (234) 567-890</div>
                 </div>
-              </a>
+              </motion.a>
             </div>
           </AnimatedSection>
 
           {/* Contact form */}
           <AnimatedSection delay={0.15}>
-            <form onSubmit={handleSubmit} className="glass-card p-6 space-y-4">
+            <form onSubmit={handleSubmit} className="glass-card-enhanced p-6 space-y-4 neon-card-primary">
               <input
                 type="text"
                 placeholder="Your Name"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
-                className="w-full px-4 py-3 rounded-lg bg-surface-dark border border-border text-foreground text-sm placeholder:text-text-dim focus:outline-none focus:border-primary/50 transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-surface-dark/80 border border-border text-foreground text-sm placeholder:text-text-dim focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(var(--primary)/0.1)] transition-all backdrop-blur-sm"
               />
               <input
                 type="email"
@@ -80,7 +86,7 @@ const ContactSection = () => {
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 required
-                className="w-full px-4 py-3 rounded-lg bg-surface-dark border border-border text-foreground text-sm placeholder:text-text-dim focus:outline-none focus:border-primary/50 transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-surface-dark/80 border border-border text-foreground text-sm placeholder:text-text-dim focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(var(--primary)/0.1)] transition-all backdrop-blur-sm"
               />
               <textarea
                 placeholder="Tell me about your project..."
@@ -88,11 +94,11 @@ const ContactSection = () => {
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 required
                 rows={4}
-                className="w-full px-4 py-3 rounded-lg bg-surface-dark border border-border text-foreground text-sm placeholder:text-text-dim focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-surface-dark/80 border border-border text-foreground text-sm placeholder:text-text-dim focus:outline-none focus:border-primary/50 focus:shadow-[0_0_15px_hsl(var(--primary)/0.1)] transition-all resize-none backdrop-blur-sm"
               />
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:brightness-110 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:brightness-110 transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)]"
               >
                 <Send size={14} />
                 Send Message

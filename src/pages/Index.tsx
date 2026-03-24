@@ -1,11 +1,10 @@
 /**
  * ============================================================
- * INDEX PAGE — Full portfolio composition
- * ============================================================
- * All sections assembled in order with particle background.
+ * INDEX PAGE — Full portfolio with 3D scene + particle bg
  * ============================================================
  */
 
+import { lazy, Suspense } from "react";
 import ParticleBackground from "@/components/ParticleBackground";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -21,9 +20,14 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
+const Scene3D = lazy(() => import("@/components/Scene3D"));
+
 const Index = () => (
   <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
     <ParticleBackground />
+    <Suspense fallback={null}>
+      <Scene3D />
+    </Suspense>
     <Navbar />
     <main className="relative z-10">
       <HeroSection />
