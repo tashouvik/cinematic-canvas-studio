@@ -62,7 +62,7 @@ const SectionTransition = ({ variant = "glow" }: SectionTransitionProps) => {
 
   /* Default: glow */
   return (
-    <div ref={ref} className="relative h-16 pointer-events-none flex items-center justify-center">
+    <div ref={ref} className="relative h-8 pointer-events-none flex items-center justify-center">
       <motion.div
         style={{ scaleX, opacity }}
         className="w-full max-w-4xl h-px origin-center relative"

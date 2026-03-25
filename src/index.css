@@ -169,7 +169,7 @@
 
   /* Cinematic section spacing */
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32 px-4 md:px-8;
+    @apply py-12 md:py-16 lg:py-20 px-4 md:px-8;
   }
 }
 

@@ -42,12 +42,6 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="section-padding relative overflow-hidden" ref={ref}>
-      {/* Diagonal section divider */}
-      <div className="absolute top-0 left-0 right-0 h-32 -mt-16 pointer-events-none"
-        style={{
-          background: "linear-gradient(175deg, hsl(var(--background)) 49%, transparent 51%)",
-        }}
-      />
 
       {/* Parallax floating orb */}
       <motion.div
