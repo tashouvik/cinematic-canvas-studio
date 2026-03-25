@@ -23,7 +23,7 @@ const SectionTransition = ({ variant = "glow" }: SectionTransitionProps) => {
 
   if (variant === "line") {
     return (
-      <div ref={ref} className="relative py-4 flex justify-center">
+      <div ref={ref} className="relative py-2 flex justify-center">
         <motion.div
           style={{ scaleX, opacity }}
           className="h-px w-full max-w-2xl origin-center"
