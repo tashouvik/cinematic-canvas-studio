@@ -79,10 +79,6 @@ const services = [
 
 const ServicesSection = () => (
   <section id="services" className="section-padding relative overflow-hidden">
-    {/* Diagonal divider */}
-    <div className="absolute top-0 left-0 right-0 h-32 -mt-16 pointer-events-none"
-      style={{ background: "linear-gradient(175deg, transparent 49%, hsl(var(--background)) 51%)" }}
-    />
 
     <div className="max-w-7xl mx-auto">
       <AnimatedSection>

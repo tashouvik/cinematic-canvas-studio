@@ -23,7 +23,7 @@ const SectionTransition = ({ variant = "glow" }: SectionTransitionProps) => {
 
   if (variant === "line") {
     return (
-      <div ref={ref} className="relative py-4 flex justify-center">
+      <div ref={ref} className="relative py-2 flex justify-center">
         <motion.div
           style={{ scaleX, opacity }}
           className="h-px w-full max-w-2xl origin-center"
@@ -43,7 +43,7 @@ const SectionTransition = ({ variant = "glow" }: SectionTransitionProps) => {
 
   if (variant === "fade") {
     return (
-      <div ref={ref} className="relative h-24 pointer-events-none">
+      <div ref={ref} className="relative h-10 pointer-events-none">
         <motion.div
           style={{ opacity }}
           className="absolute inset-0"
@@ -62,7 +62,7 @@ const SectionTransition = ({ variant = "glow" }: SectionTransitionProps) => {
 
   /* Default: glow */
   return (
-    <div ref={ref} className="relative h-16 pointer-events-none flex items-center justify-center">
+    <div ref={ref} className="relative h-8 pointer-events-none flex items-center justify-center">
       <motion.div
         style={{ scaleX, opacity }}
         className="w-full max-w-4xl h-px origin-center relative"
