@@ -43,7 +43,7 @@ const SectionTransition = ({ variant = "glow" }: SectionTransitionProps) => {
 
   if (variant === "fade") {
     return (
-      <div ref={ref} className="relative h-24 pointer-events-none">
+      <div ref={ref} className="relative h-10 pointer-events-none">
         <motion.div
           style={{ opacity }}
           className="absolute inset-0"
